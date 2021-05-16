@@ -1,0 +1,294 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dicky Ardianto</title>
+    </head>
+    <style>
+      .bgjudul{
+          background-color: rgb(25, 25, 204);
+          color :white;
+          font-family: Verdana;
+          text-align: center;
+          width: 1300px;
+      }
+      .quest{
+          text-align: center;
+          font-style: italic;
+      }
+      .bgform1{
+          background-color: rgb(0, 110, 255);
+          color:white;
+          border-radius: 5px;
+          width: 450px;
+      }
+      .bgform2{
+          background-color: rgb(0, 110, 255);
+          color:white;
+          border-radius: 5px;
+      }
+      .alert{
+          background-color:rgb(34, 240, 34);
+          color:white;
+          border-radius: 5px;
+          font-family: Verdana;
+          font-size: 25px;
+      }
+      .warning{
+          background-color:rgb(238, 54, 54);
+          color:white;
+          border-radius: 5px;
+          font-family: Verdana;
+          font-size: 25px;
+      }
+    </style>
+    <body bgcolor="">
+        <table class="bgjudul" align="center">
+            <td>
+                <h2>DETEKSI DINI COVID-19</h2>
+            </td>
+        </table>
+        <br><br>
+        <div id = "form1" style = "display:block">
+            <table class="bgform1" align="center" id="table1">
+            <td>
+            <form name = "form1" style="text-align :left;">
+                <p class="quest">Apakah anda mengalami ?</p>
+                <form name = "form1" style="text-align :left;">
+                    <input type="radio" id="Ya" value="Ya">Demam >= 38 C atau gejala - gejala covid 19<br>
+                    <input type="radio" id="Tidak" value="Tidak">Tidak<br>
+                    <button type="button" onclick = "goform_next1()">Next</button>
+            </form>
+            </td>
+            </table>
+        </div>
+        <div id="form2" style="display: none;">
+            <form name="form2"></form>
+            <table class="bgform2" align="center">
+                <td>
+                <label>
+                    <p class="quest">Pada 14 hari terakhir:</p>
+                    <p>* Tinggal atau bepergiian di negara/wilayah Indonesia dengan transmisi lokal</p>
+                    <p>* Tinggal atau bekerja di tempat berisiko (pengungsian, asrama, dll)</p>
+                    <p>* Bekerja di Fasyankes, melakukan investigasi, pemantauan kasus, dan kontak</p>
+                </label>
+                <input type="radio" id="Ya1" value="Ya1">Ya<br>
+                <input type="radio" id="Tidak1" value="Tidak1">Tidak<br>
+                <button type="button" onclick="goform_next2()">Next</button>
+            </form>
+            </td>
+            </table>
+        </div>
+        <div id="form3" style="display: none;">
+            <table class="bgform2" align="center">
+            <td>
+            <form name="form3">
+                <label>
+                    <p class="quest">Pada 14 hari terakhir :</p>
+                    <p>* Tinggal atau bepergiian di negara/wilayah Indonesia dengan transmisi lokal</p>
+                    <p>* Tinggal atau bekerja di tempat berisiko (pengungsian, asrama, dll)</p>
+                    <p>* Bekerja di Fasyankes, melakukan investigasi, pemantauan kasus, dan kontak</p>
+                </label>
+                <input type="radio" id="Ya2" value="Ya2">Ya<br>
+                <input type="radio" id="Tidak2" value="Tidak2">Tidak<br>
+                <button type="button" onclick="goform_next3()">Next</button>
+            </form>
+            </td>
+            </table>
+        </div>
+        <div id="form4" style="display: none;">
+            <table class="bgform2" align="center">
+            <td>
+            <form name="form4">
+                <label>
+                    <p class="quest">Lakukan monitoring kesehatan mandiri selama 14 hari</p> 
+                </label>
+                <input type="radio" id="Gejala" value="Gejala">Muncul gejala<br>
+                <input type="radio" id="Tidak" value="Tidak">Tidak Muncul Gejala<br>
+                <button type="button" onclick="goform_next4()">Next</button>
+            </form>
+            </td>
+            </table>
+        </div>
+        <div id="form5" style="display: none;">
+            <table class="bgform2" align="center">
+            <td>
+            <form name="form5">
+                <label>
+                    <p class="quest">Periksakan diri untuk dilakukan pengambilan spesimen dan tatalaksana lebih lanjut</p>
+                </label>
+                <input type="radio" id="Positif" value="Positif">Positif<br>
+                <input type="radio" id="Negatif" value="Negatif">Negatif<br>
+                <button type="button" onclick="goform_next5()">Next</button>
+            </form>
+            </td>
+            </table>
+        </div>
+        <div id="tidakForm2" style="display: none;">
+            <table align="center">
+            <td>
+            <label>
+                <p class="alert">
+                    Istirahat yang cukup dan Periksakan diri  ke Fasilitas Pelayanan Kesehatan untuk laksana lebih lanjut
+                </p>
+            </label>
+            </td>
+            </table>
+        </div>
+        <div id="tidakForm3" style="display: none;">
+            <table align="center">
+            <td>
+            <label>
+                <p class="alert">
+                    Selalu jaga kesehatan dan Terapkan protokol kesehatan dalam beraktivitas
+                </p>
+            </label>
+            </td>
+            </table>
+        </div>
+        <div id="tidakForm4" style="display: none;">
+            <table align="center">
+                <td>
+            <p class="alert">
+                Jaga dan selalu patuhi protokol ya :)
+            </p>
+            </td>
+            </table>
+        </div>
+        <div id="positif" style="display: none;">
+            <table align="center">
+            <td>
+            <p class="warning">KASUS KONFIRMASI<br>
+            SEGERA! konsultasikan dengan petugas kesehatan setempat</p>
+            </td>
+            </table>
+        </div>
+        <div id="negatif" style="display: none;">
+            <table align="center">
+            <td>
+            <p class="quest">DISCARDED (BUKAN COVID-19)</p>
+            <p class ="warning">* Selalu jaga kesehatan<br>
+                    * Terapkan protokol kesehatan dalam beraktivitas</p>
+            </td>
+            </table>
+        </div>
+        <script>
+            var nama;
+            function goform_next1()
+            {
+                if (document.getElementById("Ya").checked == true)
+                {
+                    document.getElementById("form1").style.display = 'none';
+                    document.getElementById("form2").style.display = 'block';
+                    
+                }
+                else if (document.getElementById("Tidak").checked == true)
+                {
+                    document.getElementById("form1").style.display = 'none';
+                    document.getElementById("form2").style.display = 'none';
+                    document.getElementById("form3").style.display = 'block';
+                }
+                else
+                    alert('not clear');
+                
+            }
+    
+            function goform_next2()
+            {
+                if (document.getElementById("Ya1").checked == true)
+                {
+                    document.getElementById("form1").style.display = 'none';
+                    document.getElementById("form2").style.display = 'none';
+                    document.getElementById("form3").style.display = 'none';
+                    document.getElementById("form4").style.display = 'none';
+                    document.getElementById("form5").style.display = 'block';
+                }
+                else if (document.getElementById("Tidak1").checked == true)
+                {
+                    document.getElementById("form1").style.display = 'none';
+                    document.getElementById("form2").style.display = 'none';
+                    document.getElementById("form3").style.display = 'none';
+                    document.getElementById("form4").style.display = 'none';
+                    document.getElementById("tidakForm2").style.display = 'block';
+                }
+                else
+                    alert('not clear');    
+            }
+            
+            function goform_next3()
+            {
+                if (document.getElementById("Ya2").checked == true)
+                {
+                    document.getElementById("form1").style.display = 'none';
+                    document.getElementById("form2").style.display = 'none';
+                    document.getElementById("form3").style.display = 'none';
+                    document.getElementById("form4").style.display = 'block';
+                    document.getElementById("form5").style.display = 'none';
+                }
+                else if (document.getElementById("Tidak2").checked == true)
+                {
+                    document.getElementById("form1").style.display = 'none';
+                    document.getElementById("form2").style.display = 'none';
+                    document.getElementById("form3").style.display = 'none';
+                    document.getElementById("form4").style.display = 'none';
+                    document.getElementById("form5").style.display = 'none';
+                    document.getElementById("tidakForm3").style.display = 'block';
+                }
+                else
+                    alert('not clear');
+                
+            }
+    
+            function goform_next4()
+            {
+                if (document.getElementById("Gejala").checked == true)
+                {
+                    document.getElementById("form1").style.display = 'none';
+                    document.getElementById("form2").style.display = 'none';
+                    document.getElementById("form3").style.display = 'none';
+                    document.getElementById("form4").style.display = 'none';
+                    document.getElementById("form5").style.display = 'block';
+                }
+                else if (document.getElementById("Tidak").checked == true)
+                {
+                    document.getElementById("form1").style.display = 'none';
+                    document.getElementById("form2").style.display = 'none';
+                    document.getElementById("form3").style.display = 'none';
+                    document.getElementById("form4").style.display = 'none';
+                    document.getElementById("form5").style.display = 'none';
+                    document.getElementById("tidakForm4").style.display = 'block';
+                }
+                else
+                    alert('not clear');
+                
+            }
+    
+            function goform_next5()
+            {
+                if (document.getElementById("Positif").checked == true)
+                {
+                    document.getElementById("form1").style.display = 'none';
+                    document.getElementById("form2").style.display = 'none';
+                    document.getElementById("form3").style.display = 'none';
+                    document.getElementById("form4").style.display = 'none';
+                    document.getElementById("form5").style.display = 'none';
+                    document.getElementById("positif").style.display = 'block';
+                    document.getElementById("negatif").style.display = 'none';
+                }
+                else if (document.getElementById("Negatif").checked == true)
+                {
+                    document.getElementById("form1").style.display = 'none';
+                    document.getElementById("form2").style.display = 'none';
+                    document.getElementById("form3").style.display = 'none';
+                    document.getElementById("form4").style.display = 'none';
+                    document.getElementById("form5").style.display = 'none';
+                    document.getElementById("positif").style.display = 'none';
+                    document.getElementById("negatif").style.display = 'block';
+                }
+                else
+                    alert('not clear');
+            }
+        </script>
+    </body>
+</html>
